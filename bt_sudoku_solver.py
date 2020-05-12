@@ -64,7 +64,8 @@ board1 = np.array([
     [0,5,0,0,0,3,0,2,8],
     [0,0,9,3,0,0,0,7,4],
     [0,4,0,0,5,0,0,3,6],
-    [7,0,3,0,1,8,0,0,0],])
+    [7,0,3,0,1,8,0,0,0]
+])
 board2 = np.array([
     [0,2,0,6,0,8,0,0,0],
     [5,8,0,0,0,9,7,0,0],
@@ -109,15 +110,29 @@ board5 = np.array([
     [5,0,0,0,0,9,0,0,0],
     [0,0,0,0,0,0,0,4,0]
 ])
-"""
-print (inRow(board, 2, 0)) #True
-print (inRow(board, 5, 1)) #False
-print (inCol(board, 8, 0)) #True
-print (inCol(board, 3, 1)) #False
-print (inSquare(board, 9, 1, 1)) #True
-print (inSquare(board, 8, 4, 1)) #True
-print (inSquare(board, 3, 4, 2)) #False
-"""
+board6 = np.array([
+    [5,0,0,0,0,1,0,0,0],
+    [1,0,7,2,0,0,0,4,0],
+    [0,8,0,5,0,0,2,1,9],
+    [0,0,0,7,0,0,0,3,0],
+    [0,0,8,0,1,0,6,0,0],
+    [0,7,0,0,0,5,0,0,0],
+    [7,5,9,0,0,2,0,6,0],
+    [0,4,0,0,0,8,7,0,1],
+    [0,0,0,6,0,0,0,0,3]
+])
+board7 = np.array([
+    [0,0,5,0,9,0,0,0,0],
+    [9,0,0,4,0,0,0,0,0],
+    [0,7,0,0,0,0,5,0,1],
+    [0,0,6,8,0,0,0,0,2],
+    [1,0,8,0,0,0,3,0,7],
+    [5,0,0,0,0,9,1,0,0],
+    [6,0,3,0,0,0,0,4,0],
+    [0,0,0,0,0,1,0,0,3],
+    [0,0,0,0,8,0,6,0,0]
+])
+
 board_time1 = time.time()
 solveJustBacktracking(board1)
 print(board1)
@@ -147,13 +162,27 @@ solveJustBacktracking(board5)
 print(board5)
 board_time5 = time.time() - board_time5
 print("Execution took: %s " % board_time5)
-print("Total Time = %s " %(board_time1 + board_time2 + board_time3 + board_time4 + board_time5))
+
+board_time6 = time.time()
+solveJustBacktracking(board6)
+print(board6)
+board_time6 = time.time() - board_time6
+print("Execution took: %s " % board_time6)
+
+board_time7 = time.time()
+solveJustBacktracking(board7)
+print(board7)
+board_time7 = time.time() - board_time7
+print("Execution took: %s " % board_time7)
+print("Total Time = %s " %(board_time1 + board_time2 + board_time3 + board_time4 + board_time5 + board_time6 + board_time7))
 """
 Board 1 = 0.005984067916870117
 Board 2 = 0.22541165351867676
 Board 3 = 88.84742617607117
 Board 4 = 0.44281554222106934
 Board 5 = 7.832394123077393
+Board 6 =
+Board 7 = 
 Totatl time = 97.35403156280518
 """
 

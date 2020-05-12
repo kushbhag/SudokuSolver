@@ -68,16 +68,6 @@ def removeFromNeighbor(row, col, number):
         if number in assignment[n] and not len(assignment[n]) == 1:
             assignment[n].remove(number)
 
-def removeFromForwardNeighbor(row, col, number):
-    for n in neighbors[(row, col)]:
-        if number in assignment[n] and not len(assignment[n]) == 1 and n[0] > row and n[1] > col:
-            assignment[n].remove(number)
-
-def addToForwardNeighbor(row, col, number):
-    for n in neighbors[(row, col)]:
-        if not number in assignment[n] and n[0] > row and n[1] > col:
-            assignment[n].append(number)
-
 def solveJustBacktracking(board, dict):
     for row in range(ROW_SIZE):
         for col in range(COL_SIZE):
@@ -86,26 +76,24 @@ def solveJustBacktracking(board, dict):
                 for i in dict[(row, col)]:
                     if isConsistent(board, i, row, col):
                         board[row][col] = i
-                        #removeFromForwardNeighbor(row, col, i)
                         didSolve = solveJustBacktracking(board, assignment)
                         if didSolve:
                             return True
                         else:
                             board[row][col] = num
-                            #addToForwardNeighbor(row, col, i)
                 return False
     return True
 
 board = np.array([
-    [2,0,0,3,0,0,0,0,0],
-    [8,0,4,0,6,2,0,0,3],
-    [0,1,3,8,0,0,2,0,0],
-    [0,0,0,0,2,0,3,9,0],
-    [5,0,7,0,0,0,6,2,1],
-    [0,3,2,0,0,6,0,0,0],
-    [0,2,0,0,0,9,1,4,0],
-    [6,0,1,2,5,0,8,0,9],
-    [0,0,0,0,0,1,0,0,2]
+    [0,0,0,6,0,0,4,0,0],
+    [7,0,0,0,0,3,6,0,0],
+    [0,0,0,0,9,1,0,8,0],
+    [0,0,0,0,0,0,0,0,0],
+    [0,5,0,1,8,0,0,0,3],
+    [0,0,0,3,0,6,0,4,5],
+    [0,4,0,2,0,0,0,6,0],
+    [9,0,3,0,0,0,0,0,0],
+    [0,2,0,0,0,0,1,0,0],
 ])
 assignment = dict()
 neighbors = dict()
