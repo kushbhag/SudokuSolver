@@ -8,13 +8,22 @@ To test this on the ac3_sudoku_solver, use the blank template offered here and i
 Note: the zeroes are meant to imitate empty spaces
 
 board = np.array([
+
     [0,0,0,0,0,0,0,0,0],
+    
     [0,0,0,0,0,0,0,0,0],
+    
     [0,0,0,0,0,0,0,0,0],
+    
     [0,0,0,0,0,0,0,0,0],
+    
     [0,0,0,0,0,0,0,0,0],
+    
     [0,0,0,0,0,0,0,0,0],
+    
     [0,0,0,0,0,0,0,0,0],
+    
     [0,0,0,0,0,0,0,0,0],
+    
     [0,0,0,0,0,0,0,0,0]
 ])
